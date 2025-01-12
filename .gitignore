@@ -1,0 +1,44 @@
+# Laravel-specific files
+/vendor/
+/node_modules/
+/public/storage
+/storage/*.key
+.env
+.env.*.backup
+
+# Laravel IDE helper files
+.phpstorm.meta.php
+/_ide_helper.php
+/_ide_helper_models.php
+
+# Debugbar storage files
+/storage/debugbar/*
+
+# Laravel log files
+/storage/logs/*.log
+/storage/framework/sessions/*
+/storage/framework/cache/*
+/storage/framework/views/*
+
+# Cache, config, and compiled files
+/bootstrap/cache/*
+*.log
+*.cache
+*.config
+
+# Ignoring macOS .DS_Store files
+.DS_Store
+
+# Composer and npm lock files (if you do not want to track)
+# composer.lock
+# package-lock.json
+# yarn.lock
+
+# Editor and system files
+*.sublime-workspace
+*.sublime-project
+.vscode/
+.idea/
+*.swp
+*.bak
+*.tmp

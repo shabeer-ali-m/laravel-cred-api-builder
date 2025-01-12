@@ -1,0 +1,92 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Services\{{ className }}Service;
+use App\Http\Requests\{{ className }}Request;
+use Illuminate\Routing\Controller as BaseController;
+
+/**
+ * Class {{ className }}Controller
+ *
+ * This controller handles API operations for the Client resource.
+ * It delegates business logic to the ClientService.
+ */
+class {{ className }}Controller extends BaseController
+{
+    /**
+     * @var {{ classname }}Service
+     */
+    protected ${{ classname }}Service;
+
+    /**
+     * {{ className }}Controller constructor.
+     *
+     * Initializes the {{ classname }}Service instance.
+     */
+    public function __construct({{ className }}Service ${{ classname }})
+    {
+        $this->{{ className }}Service = ${{ classname }};
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \App\Http\Resources\{{ className }}Resource
+     */
+    public function index()
+    {
+        return $this->{{ className }}Service->getAll();
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\{{ className }}Request  $request
+     * @return \App\Http\Resources\{{ className }}Resource
+     */
+    public function store({{ className }}Request $request)
+    {
+        return $this->{{ className }}Service->store($request->all());
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\{{ className }}  $id
+     * @return \Illuminate\Http\Response
+     *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException If the {{ modelname }} is not found.
+     */
+    public function show($id)
+    {
+        return $this->{{ className }}Service->show($id);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\{{ className }}Request  $request
+     * @param  \App\Models\{{ className }}  $id
+     * @return \App\Http\Resources\{{ className }}Resource
+     *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException If the {{ modelname }} is not found.
+     */
+    public function update({{ className }}Request $request, $id)
+    {
+        return $this->{{ className }}Service->update($request->all(), $id);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\{{ className }}  $id
+     * @return \Illuminate\Http\Response
+     *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException If the {{ modelname }} is not found.
+     */
+    public function destroy($id)
+    {
+        return $this->{{ className }}Service->destroy($id);
+    }
+}

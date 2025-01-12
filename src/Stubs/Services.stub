@@ -1,0 +1,88 @@
+<?php
+
+namespace App\Services;
+
+use App\Models\{{ modelName }};
+use App\Http\Resources\{{ className }}Resource;
+
+/**
+ * Class {{ className }}Service
+ *
+ * This service handles operations related to the {{ modelName }} model,
+ * including CRUD operations and resource transformation.
+ */
+class {{ className }}Service
+{
+    /**
+     * Retrieve a paginated list of {{ modelName }}.
+     *
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
+    public function getAll()
+    {
+        return {{ className }}Resource::collection(
+            {{ modelName }}::paginate()
+        );
+    }
+
+    /**
+     * Store a newly created application in the database.
+     *
+     * @param  array $request Data for creating the application.
+     * @return {{ className }}Resource
+     *
+     * @throws \Illuminate\Database\Eloquent\MassAssignmentException If the request contains invalid fields.
+     */
+    public function store(array $request)
+    {
+        return new {{ className }}Resource(
+            {{ modelName }}::create($request)
+        );
+    }
+
+    /**
+     * Display the specified application.
+     *
+     * @param  int $id The ID of the application to retrieve.
+     * @return {{ className }}Resource
+     *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException If the {{ modelName }} is not found.
+     */
+    public function show($id)
+    {
+        return new {{ className }}Resource(
+            {{ modelName }}::findOrFail($id)
+        );
+    }
+
+    /**
+     * Update the specified {{ modelName }}  in the database.
+     *
+     * @param  array $request Data for updating the {{ modelName }}.
+     * @param  int $id The ID of the {{ modelName }}  to update.
+     * @return {{ className }}Resource
+     *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException If the {{ modelName }} is not found.
+     * @throws \Illuminate\Database\Eloquent\MassAssignmentException If the request contains invalid fields.
+     */
+    public function update(array $request, $id)
+    {
+        ${{ modelname }} = {{ modelName }}::findOrFail($id);
+        ${{ modelname }}->update($request);
+
+        return new {{ className }}Resource(${{ modelname }});
+    }
+
+    /**
+     * Remove the specified {{ modelName }} from the database.
+     *
+     * @param  int $id The ID of the {{ modelName }} to delete.
+     * @return void
+     *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException If the {{ modelName }} is not found.
+     */
+    public function destroy($id)
+    {
+        {{ modelName }}::findOrFail($id)->delete();
+    }
+}

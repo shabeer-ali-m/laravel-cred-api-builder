@@ -1,0 +1,19 @@
+{
+    "name": "laravel/cred-api-builder",
+    "description": "A package for Laravel to build CRUD REST APIs.",
+    "type": "library",
+    "license": "MIT",
+    "version":"0.0.1",
+    "autoload": {
+        "psr-4": {
+            "Laravel\\CredApiBuilder\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Laravel\\CredApiBuilder\\CredApiBuilderServiceProvider"
+            ]
+        }
+    }
+}
