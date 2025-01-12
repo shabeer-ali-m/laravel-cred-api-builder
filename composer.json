@@ -15,5 +15,9 @@
                 "Laravel\\CredApiBuilder\\CredApiBuilderServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "laravel/framework": "^11.31"
     }
 }
