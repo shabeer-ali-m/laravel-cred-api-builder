@@ -3,7 +3,7 @@
     "description": "A package for Laravel to build CRUD REST APIs.",
     "type": "library",
     "license": "MIT",
-    "version":"0.0.1",
+    "version":"0.0.2",
     "autoload": {
         "psr-4": {
             "Laravel\\CredApiBuilder\\": "src/"
