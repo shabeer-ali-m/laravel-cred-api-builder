@@ -1,5 +1,5 @@
 {
-    "name": "laravel/cred-api-builder",
+    "name": "smart-php/laravel-cred-api-builder",
     "description": "A package for Laravel to build CRUD REST APIs.",
     "type": "library",
     "license": "MIT",
