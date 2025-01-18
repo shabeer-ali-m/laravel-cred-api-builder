@@ -31,7 +31,7 @@ Follow these steps to install the Laravel CRED API Builder package:
 1. **Require the package** via Composer:
 
    ```bash
-   composer require laravel/laravel-cred-api-builder --dev
+   composer require smart-php/laravel-cred-api-builder --dev
    ```
 
 ## Usage
